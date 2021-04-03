@@ -223,10 +223,12 @@ async def reload(ctx,extension):
     client.load_extension(f"cogs.{extension}")
     await ctx.send("Reloaded successfully")
 
-
+with open("key.env","r") as txt:
+  line = txt.readlines()
+  token = line[0].strip()
 
 for i in client.guilds:
   print(i.name)
 print("Mains ready 👍")
 
-client.run("ODI0ODY2MDA0Njg1MTYwNDY5.YF1mVA.vByc3iYKeXWE5SFs_k4-6ksHgwA")
+client.run(token)
